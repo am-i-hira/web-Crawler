@@ -1,0 +1,52 @@
+
+<!--link of git :  https://github.com/am-i-hira/web-Crawler -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crawl Websites</title>
+    <link rel="stylesheet" href="styles/search.css">
+</head>
+
+<body>
+    <div class="cont" id="searchCont">
+        <!-- Header for the search form -->
+        <h2 class="heading">Web Crawler</h2>
+
+        <!-- Search form -->
+        <form action="search.php" method="POST">
+            <div class="container">
+                <!-- Input fields for URL and depth -->
+                <div class="input-cont">
+                    <input class="input1" type="text" placeholder="Url" name="url" id="url">
+                    <input class="input2" type="text" placeholder="Depth" name="depth" id="depth">
+                </div>
+
+                <!-- Submit button for the form -->
+                <button type="submit" onclick="handleSubmit(event)" class="search">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript script to handle form submission -->
+    <script>
+        // Function to handle form submission
+        function handleSubmit(event) {
+            // Get the values of URL and depth inputs and trim any leading/trailing whitespaces
+            var url = document.getElementById("url").value.trim();
+            var depth = document.getElementById("depth").value.trim();
+
+            // Check if either URL or depth is empty
+            if (url === "" || depth === "") {
+                // Prevent form submission and show an alert
+                event.preventDefault();
+                alert("Please enter a URL or Depth!");
+            }
+        }
+    </script>
+</body>
+
+</html>
